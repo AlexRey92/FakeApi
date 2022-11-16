@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET(value ="products")
-    suspend fun getProduct():Response<ProductsResponse>
+    suspend fun getProduct(): Response<List<Products>>
 }

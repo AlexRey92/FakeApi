@@ -9,17 +9,17 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
 class ProductAdapter:ListAdapter<ProductsOb,ProductAdapter.ViewHolder>(DiffCallBack) {
-    inner class ViewHolder(val view:View):RecyclerView.ViewHolder(view){
-        private val Idproducto:TextView=view.findViewById(R.id.textViewID)
-        private val TituloProducto:TextView=view.findViewById(R.id.textViewproducto)
-        private val PrecioProducto:TextView=view.findViewById(R.id.textViewprecio)
+    inner class ViewHolder(val view:View):RecyclerView.ViewHolder(view) {
+
+        private val idProducto:TextView = view.findViewById(R.id.textViewID)
+        private val TituloProducto:TextView = view.findViewById(R.id.textViewproducto)
+        private val PrecioProducto:TextView = view.findViewById(R.id.textViewprecio)
 
         fun onBind(producto:ProductsOb){
-            Idproducto.text=producto.ID.toString()
-            TituloProducto.text=producto.titulo
-            PrecioProducto.text=producto.precio.toString()
+            idProducto.text = producto.ID.toString()
+            TituloProducto.text = producto.titulo
+            PrecioProducto.text = producto.precio.toString()
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,6 +41,4 @@ class ProductAdapter:ListAdapter<ProductsOb,ProductAdapter.ViewHolder>(DiffCallB
             return oldItem == newItem
         }
     }
-
-
 }

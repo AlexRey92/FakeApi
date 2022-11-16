@@ -1,10 +1,5 @@
 package com.e.fakeapi
 
-data class ProductsResponse (
-
-    val array:List<Products>
-        )
-
 data class Products(
     val id:Int,
     val title:String,
@@ -18,7 +13,6 @@ data class Products(
 data class RatingClass (
     val rate:Double,
     val count:Int
-
-        )
+)
 
 
