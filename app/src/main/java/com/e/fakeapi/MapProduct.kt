@@ -1,5 +1,5 @@
 package com.e.fakeapi
 
-fun Products.MapProduct() = ProductsOb(
+fun Products.mapProduct() = ProductsOb(
     id, title, price
 )

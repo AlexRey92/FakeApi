@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             runOnUiThread {
                 if (call.isSuccessful) {
                    response?.apply {
-                       listaDeProductos = this.map { Products-> Products.MapProduct() }
+                       listaDeProductos = this.map { Products-> Products.mapProduct() }
                        with(adapter) {
                            submitList(listaDeProductos)
                        }
@@ -53,8 +53,7 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
-
+    
     companion object{
         const val URL_API = "https://fakestoreapi.com/"
     }

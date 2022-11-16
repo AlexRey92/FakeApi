@@ -9,27 +9,25 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
 class ProductAdapter:ListAdapter<ProductsOb,ProductAdapter.ViewHolder>(DiffCallBack) {
-    inner class ViewHolder(val view:View):RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(private val view: View):RecyclerView.ViewHolder(view) {
 
         private val idProducto:TextView = view.findViewById(R.id.textViewID)
-        private val TituloProducto:TextView = view.findViewById(R.id.textViewproducto)
-        private val PrecioProducto:TextView = view.findViewById(R.id.textViewprecio)
+        private val tituloProducto:TextView = view.findViewById(R.id.textViewproducto)
+        private val precioProducto:TextView = view.findViewById(R.id.textViewprecio)
 
         fun onBind(producto:ProductsOb){
             idProducto.text = producto.ID.toString()
-            TituloProducto.text = producto.titulo
-            PrecioProducto.text = producto.precio.toString()
+            tituloProducto.text = producto.titulo
+            precioProducto.text = producto.precio.toString()
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view:View=LayoutInflater.from(parent.context).inflate(R.layout.item_task,parent,false)
-        return ViewHolder((view))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_task,parent,false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item=getItem(position)
-        holder.onBind(item)
+        holder.onBind(getItem(position))
     }
 
     companion object DiffCallBack : DiffUtil.ItemCallback<ProductsOb>() {

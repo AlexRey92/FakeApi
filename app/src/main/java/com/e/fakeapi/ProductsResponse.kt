@@ -1,18 +1,18 @@
 package com.e.fakeapi
 
 data class Products(
-    val id:Int,
-    val title:String,
-    val price:Double,
-    val description:String,
-    val category:String,
-    val image:String,
-    val rating:RatingClass
+    val id: Int,
+    val title: String,
+    val price: Double,
+    val description: String,
+    val category: String,
+    val image: String,
+    val rating: RatingClass
 )
 
 data class RatingClass (
-    val rate:Double,
-    val count:Int
+    val rate: Double,
+    val count: Int
 )
 
 
