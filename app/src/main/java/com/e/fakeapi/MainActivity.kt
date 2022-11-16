@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter:ProductAdapter
 
-    var listaDeProductos= listOf<ProductsOb>()
+    var listaDeProductos = listOf<ProductsOb>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-    
+
     companion object{
         const val URL_API = "https://fakestoreapi.com/"
     }
